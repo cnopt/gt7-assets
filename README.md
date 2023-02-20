@@ -7,6 +7,7 @@
 |   11,859      | .jpg files    | scapes, used car dealership preview images
 |   10,328      | .img files    | car images, brand logos
 |   3,101       | .txt files    | scapes data/instructions
+|   2,323       | .idp0 files   | history images
 |   1,369       | .json files   | race parameters, dealership data, livery info, course spots
 |   543         | .png files    | track thumbnails
 
@@ -86,4 +87,26 @@ Use Nenkai's TXS3Converter to convert files to useable `.png` format
 |   0253            | -          
 |   0258            | -     
 |   0305            | -        
+
+
+### Car Parts
+
+`/carparts/...`
+
+Contains thumbnail images for brake calipers, images for race decals that you can put onto cars in GT Auto. Race number frames/stickers, manufacturer logos etc.
+
+
+### Fonts
+
+`/font/...`
+
+GT7 uses 3 main font families throughout the game. Helvetica Neue LTW, Futura, and Garamond. Helvetica and Futura use some extended/condensed variants of their families as well.
+
+
+### Car startup sounds
+
+`/carsound/start/...`
+
+`szd3` audio files for each car's startup sound that gets played when you swap to it inside the garage. Play these files using [vgm-stream](https://katiefrogs.github.io/vgmstream-web/). 
+
 
