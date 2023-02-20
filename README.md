@@ -19,7 +19,16 @@
 2. Open the pkg file with PS4 PKG Tool
 3. Inside the `contents/` folder of the pkg, extract `gt.idx` and each of the `gtXX.vol` files
 4. Use GTToolSharp to unpack each of the `gtXX.vol` packages
+
+        GTToolsSharp.exe gt7unpack -i <gt.idx> -o <output_folder>
+
 5. Once extracted, use TXS3Converter to convert any `.img` files to useable `.png` files
+        
+        TextureSetConverter.exe convert-png <output_folder> -f PS4
+
+6. Converted car thumbnails have some corrupt data at the bottom edge of the file, so use this command to crop out the bottom 10 pixels for every `.png` inside the car directory
+
+        find . -type f -name "*.png" -exec mogrify -crop 800x440+0+0 {} +
 
 
 --------
@@ -28,7 +37,6 @@
 
 Grouped into folders by manufacturer number. Inside each folder will have subfolders for specific cars. Not sure how the ID works yet. Inside this subfolder will be a bunch of `.img` files for transparent car thumbnails, and some `.jpg` files for the car when it's in the used car dealership. 
 
-Use Nenkai's TXS3Converter to convert files to useable `.png` format
 
 | manufacturer id   |                   |
 | ---------------   | ---------------   
@@ -107,6 +115,6 @@ GT7 uses 3 main font families throughout the game. Helvetica Neue LTW, Futura, a
 
 `/carsound/start/...`
 
-`szd3` audio files for each car's startup sound that gets played when you swap to it inside the garage. Play these files using [vgm-stream](https://katiefrogs.github.io/vgmstream-web/). 
+`szd3` audio files for each car's startup sound that gets played when you swap to it inside the garage. Play these files using [vgm-stream](https://katiefrogs.github.io/vgmstream-web/).
 
 
